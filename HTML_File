@@ -1,0 +1,12 @@
+<div class="pizza-wrapper">
+  <div class="pizza-circle"></div>
+  <div class="pizza-bases">
+    <div class="pizza-base" draggable="true">Base 1</div>
+    <div class="pizza-base" draggable="true">Base 2</div>
+  </div>
+  <div class="pizza-ingredients">
+    <div class="pizza-ingredient" draggable="true">Ingredient 1</div>
+    <div class="pizza-ingredient" draggable="true">Ingredient 2</div>
+    <div class="pizza-ingredient" draggable="true">Ingredient 3</div>
+  </div>
+</div>
