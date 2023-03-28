@@ -1,0 +1,35 @@
+const pizzaCircle = document.querySelector('.pizza-circle');
+const pizzaBases = document.querySelectorAll('.pizza-base');
+const pizzaIngredients = document.querySelectorAll('.pizza-ingredient');
+
+let baseImage = null;
+let ingredientImages = [];
+
+pizzaBases.forEach(base => {
+  base.addEventListener('dragstart', () => {
+    baseImage = base.innerText;
+  });
+});
+
+pizzaCircle.addEventListener('dragover', e => {
+  e.preventDefault();
+});
+
+pizzaCircle.addEventListener('drop', () => {
+  pizzaCircle.style.backgroundImage = `url(${baseImage}.jpg)`;
+  ingredientImages.forEach(ingredient => {
+    pizzaCircle.appendChild(ingredient);
+  });
+});
+
+pizzaIngredients.forEach(ingredient => {
+  ingredient.addEventListener('dragstart', () => {
+    const image = document.createElement('img');
+    image.src = `${ingredient.innerText}.png`;
+    image.style.position = 'absolute';
+    image.style.left = `${Math.random() * 200}px`;
+    image.style.top = `${Math.random() * 200}px`;
+    ingredientImages.push(image);
+    pizzaCircle.appendChild(image);
+  });
+});
